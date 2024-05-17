@@ -17,7 +17,7 @@ const Calculator = () => {
         setShouldShow(false);
     }
     const handleEquate = () =>{
-        if(input==="="){
+        if(input===""){
             setError(true);
         }
        setResult(eval(input));
