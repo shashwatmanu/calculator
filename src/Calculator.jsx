@@ -25,7 +25,7 @@ const Calculator = () => {
   return (
     <>
     <h2>React Calculator</h2>
-    <input value={input}/>
+    <input type='text' value={input}/>
     {shouldShow?(<p>{result}</p>):""}
     <div style={{display:'grid', gridTemplateColumns:'40px 40px 40px 40px'}}>
         <button className='item' value="7" onClick={handleClick}>7</button>
