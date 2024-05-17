@@ -6,6 +6,7 @@ const Calculator = () => {
     const [input, setInput] = useState("")
     const [result, setResult] = useState()
     const [shouldShow, setShouldShow] = useState(false);
+    const [error, setError] = useState(false);
 
 
     const handleClick = (e) =>{
@@ -16,6 +17,9 @@ const Calculator = () => {
         setShouldShow(false);
     }
     const handleEquate = () =>{
+        if(input==="="){
+            setError(true);
+        }
        setResult(eval(input));
        setShouldShow(true);
     }
@@ -27,6 +31,7 @@ const Calculator = () => {
     <h2>React Calculator</h2>
     <input type='text' value={input}/>
     {shouldShow?(<p>{result}</p>):""}
+    {error?(<div>Error</div>):""}
     <div style={{display:'grid', gridTemplateColumns:'40px 40px 40px 40px'}}>
         <button className='item' value="7" onClick={handleClick}>7</button>
         <button className='item' value="8" onClick={handleClick}>8</button>
